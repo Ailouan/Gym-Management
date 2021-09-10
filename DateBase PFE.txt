@@ -1,0 +1,80 @@
+create database GestionSalleSport
+use GestionSalleSport
+
+create table Administrateur(
+ idAdmin int primary key identity,
+ nomAdmin nvarchar(50),
+ prenomAdmin nvarchar(50),
+ pass nvarchar(50)
+);
+
+select * from Administrateur
+
+insert into Administrateur values('saad','Karam','123');
+insert into Administrateur values('kawtar','Karam','321');
+
+create table Membre(
+ idM int primary key identity not null,
+ nomM nvarchar(50),
+ prenomM nvarchar(50),
+ cin nvarchar(50),
+ age int,
+ sexe nvarchar(50),
+ tele nvarchar(50),
+ email nvarchar(50),
+ dateInscrire date,
+ seance nvarchar(50)
+);
+
+insert into Membre values('Allali','Ahmed','SD12345',17,'Homme','0611111111','ahmed@gmail.com','01-06-2021','18:00-->20:00');
+insert into Membre values('Khaldi','kamal','RC12345',18,'Homme','0622222222','kamal@gmail.com','01-05-2021','18:00-->20:00');
+insert into Membre values('Ahmadi','karim','CD21345',19,'Homme','0633333333','karim@gmail.com','01-04-2021','18:00-->20:00');
+insert into Membre values('Amrabet','kawtar','CD89784',20,'Femme','0644444444','ahmed@gmail.com','01-06-2021','18:00-->20:00');
+insert into Membre values('Saadani','wiam','CD34862',21,'Femme','0655555555','ahmed@gmail.com','01-05-2021','18:00-->20:00');
+insert into Membre values('Amrani','fatima','WS12345',22,'Femme','0666666666','ahmed@gmail.com','01-04-2021','18:00-->20:00');
+insert into Membre values('Slimani','walid','CD18785',17,'Homme','0611111111','ahmed@gmail.com','01-06-2021','18:00-->20:00');
+insert into Membre values('Idrisi','hamza','CD36510',18,'Homme','0622222222','kamal@gmail.com','01-05-2021','18:00-->20:00');
+insert into Membre values('Maach','omar','LL12345',19,'Homme','0633333333','karim@gmail.com','01-04-2021','18:00-->20:00');
+insert into Membre values('Ajoub','khawla','DD18456',20,'Femme','0644444444','ahmed@gmail.com','01-06-2021','18:00-->20:00');
+insert into Membre values('Qrman','abir','CC18547',21,'Femme','0655555555','ahmed@gmail.com','01-05-2021','18:00-->20:00');
+insert into Membre values('Cheti','nassima','CD12345',22,'Femme','0666666666','ahmed@gmail.com','01-04-2021','18:00-->20:00');
+
+create Table Paiement(
+ [Id] int primary key identity not null,
+ [Date Paiement] date,
+ [Type] nvarchar(50),
+ [Prix] float,
+ [Id Membre] int foreign key references Membre(idM) on update cascade on delete cascade
+);
+
+
+delete Membre where idM=3
+
+insert into Paiement values('01-05-2021','Non',120,1);
+insert into Paiement values('01-04-2021','Non',120,2);
+insert into Paiement values('01-06-2021','Oui',120,3);
+insert into Paiement values('01-05-2021','Non',120,4);
+insert into Paiement values('01-04-2021','Non',120,5);
+insert into Paiement values('01-04-2021','Non',120,6);
+insert into Paiement values('01-05-2021','Non',120,7);
+insert into Paiement values('01-04-2021','Non',120,8);
+insert into Paiement values('01-06-2021','Oui',120,8);
+insert into Paiement values('01-05-2021','Non',120,10);
+insert into Paiement values('01-04-2021','Non',120,11);
+insert into Paiement values('01-04-2021','Non',120,11);
+
+select * from Membre
+select * from Paiement
+
+gym management
+is a desktop application program with C # language and SQL server
+the database of this application in the following txt file
+
+1- download the zip document
+2-export the file
+2-overwrite the new roquite SQL server
+3-copy the code from the file to roquite and run
+4-open the application in visual studio
+5-add a new connection
+6-change the connection string in the ADO class
+7-launch your application
